@@ -823,13 +823,13 @@ function makePlayer(){
   const guard=box(.34,.1,.14,0x8a6a2f,0,-.12,0);
   const hilt=cyl(.06,.06,.24,8,0x5a3a1e,0,.02,0);
   wep.add(blade,guard,hilt);
-  wep.position.set(0,-.76,.10);wep.rotation.x=Math.PI*.72;
+  wep.position.set(0,-.76,.10);wep.rotation.x=-Math.PI*.72;
   armR.add(wep);
   /* ferramentas na mão (visíveis só ao coletar) */
   const toolPick=new THREE.Group(),toolAxe=new THREE.Group();
   [toolPick,toolAxe].forEach(t=>{
     t.position.set(0,-.72,.10);
-    t.rotation.x=Math.PI*.68; /* empunhada pra cima/frente; o giro do braço faz o arco do golpe */
+    t.rotation.x=-Math.PI*.62; /* pra cima/frente de verdade (X positivo apontava pra trás) */
     t.scale.setScalar(1.25);
     t.visible=false;
     armR.add(t);
